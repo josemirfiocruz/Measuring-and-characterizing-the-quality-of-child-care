@@ -1,0 +1,10 @@
+## Notes for running the codes
+
+i) in the "preparing_base" file there are codes only to prepare the raw base (LCA_covariate) for the model adjustment; the resulting base is saved as "CHC_Covariates";
+ii) run the first code of the model via Mplus "Etap1_2_CHC_CovClusViss"; in step 1 we will have a saved file (3BCH_V2) that will be used to adjust the second code (see #3)
+iii) run the second code of the model via Mplus "Etapa3_CHC_Covariates".
+
+Obs.: 
+"LCA_covariate.dta" : full database
+"CHC_Covariates" :  database as entered in Mplus
+"3BCH_V2" : Output files from step 1-2, used in step 3

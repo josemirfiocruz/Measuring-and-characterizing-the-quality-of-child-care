@@ -1,0 +1,1320 @@
+Mplus VERSION 8.6
+MUTHEN & MUTHEN
+06/12/2025   3:08 PM
+
+INPUT INSTRUCTIONS
+
+
+    TITLE: LCA with covariates
+      DATA: FILE = "C:/Users/josemir.almeida/Desktop/LCA_BCH/3BCH_V2.dat";
+
+    VARIABLE:
+
+    NAMES = chntlca1 chrdlca1 chmdlca1 chsvlca2 chbflca1 chprlca1
+          chaslca1 chsvlca1 chsclca1 IBP1Q1Q2 IBP2Q3 IBP4Q4Q5
+          north northeast south southeast center
+          bch1 bch2 bch3 ibge2;
+
+    USEVAR = IBP1Q1Q2 IBP2Q3 north northeast south southeast
+              bch1 bch2 bch3 ibge2;
+
+    CLASSES = c(3);
+
+    CLUSTER = ibge2;
+
+    TRAINING= bch1-bch3(bch);
+
+    ANALYSIS:
+    TYPE = COMPLEX MIXTURE;
+    STARTS = 0;
+
+    MODEL:
+
+    %OVERALL%
+     c#1 ON IBP1Q1Q2 IBP2Q3 north northeast south southeast;
+     c#2 ON IBP1Q1Q2 IBP2Q3 north northeast south southeast;
+
+  	
+  OUTPUT: CINTERVAL; TECH3; TECH1; TECH4; TECH8;
+
+
+
+
+*** WARNING in VARIABLE command
+  Note that only the first 8 characters of variable names are used in the output.
+  Shorten variable names to avoid any confusion.
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+LCA with covariates
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                       16566
+
+Number of dependent variables                                    0
+Number of independent variables                                  6
+Number of continuous latent variables                            0
+Number of categorical latent variables                           1
+
+Observed dependent variables
+
+Observed independent variables
+   IBP1Q1Q2    IBP2Q3      NORTH       NORTHEAS    SOUTH       SOUTHEAS
+
+Categorical latent variables
+   C
+
+Variables with special functions
+
+  Cluster variable      IBGE2
+
+  Training variables (BCH)
+   BCH1        BCH2        BCH3
+
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 100
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-06
+    Relative loglikelihood change                        0.100D-06
+    Derivative                                           0.100D-05
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Optimization algorithm                                         EMA
+
+Input data file(s)
+  C:/Users/josemir.almeida/Desktop/LCA_BCH/3BCH_V2.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of clusters                       3857
+
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     IBP1Q1Q2              0.286       0.945       0.000   71.36%       0.000      0.000      0.000
+           16566.000       0.204      -1.107       1.000   28.64%       0.000      1.000
+     IBP2Q3                0.167       1.790       0.000   83.35%       0.000      0.000      0.000
+           16566.000       0.139       1.204       1.000   16.65%       0.000      0.000
+     NORTH                 0.060       3.701       0.000   93.99%       0.000      0.000      0.000
+           16566.000       0.057      11.696       1.000    6.01%       0.000      0.000
+     NORTHEAST             0.321       0.766       0.000   67.89%       0.000      0.000      0.000
+           16566.000       0.218      -1.413       1.000   32.11%       0.000      1.000
+     SOUTH                 0.172       1.735       0.000   82.77%       0.000      0.000      0.000
+           16566.000       0.143       1.011       1.000   17.23%       0.000      0.000
+     SOUTHEAST             0.383       0.483       0.000   61.73%       0.000      0.000      0.000
+           16566.000       0.236      -1.767       1.000   38.27%       0.000      1.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       14
+
+Loglikelihood
+
+          H0 Value                      -15582.614
+          H0 Scaling Correction Factor     23.9902
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   31193.229
+          Bayesian (BIC)                 31301.240
+          Sample-Size Adjusted BIC       31256.749
+            (n* = (n + 2) / 24)
+
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THE ESTIMATED MODEL
+
+    Latent
+   Classes
+
+       1       4480.77422          0.27048
+       2       8928.79183          0.53898
+       3       3156.43395          0.19054
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON ESTIMATED POSTERIOR PROBABILITIES
+
+    Latent
+   Classes
+
+       1       4480.77422          0.27048
+       2       8928.79183          0.53898
+       3       3156.43395          0.19054
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THEIR MOST LIKELY LATENT CLASS MEMBERSHIP
+
+Class Counts and Proportions
+
+    Latent
+   Classes
+
+       1             3727          0.22498
+       2             9971          0.60190
+       3             2868          0.17313
+
+
+Average Latent Class Probabilities for Most Likely Latent Class Membership (Row)
+by Latent Class (Column)
+
+           1        2        3
+
+    1   1.602    -.669    0.067
+    2   -.169    1.299    -.130
+    3   0.068    -.534    1.465
+
+
+Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+           1        2        3
+
+    1   1.333    -.376    0.044
+    2   -.279    1.451    -.171
+    3   0.079    -.411    1.332
+
+
+Logits for the Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+              1        2        3
+
+    1      3.420  -10.682    0.000
+    2      0.000   14.188    0.000
+    3     -2.823  -14.102    0.000
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Categorical Latent Variables
+
+ C#1        ON
+    IBP1Q1Q2           2.207      0.353      6.253      0.000
+    IBP2Q3             0.714      0.177      4.027      0.000
+    NORTH              0.241      0.374      0.645      0.519
+    NORTHEAST          0.850      0.362      2.345      0.019
+    SOUTH              0.038      0.394      0.097      0.923
+    SOUTHEAST          0.529      0.397      1.332      0.183
+
+ C#2        ON
+    IBP1Q1Q2           1.027      0.195      5.278      0.000
+    IBP2Q3             0.514      0.146      3.531      0.000
+    NORTH             -0.010      0.251     -0.040      0.968
+    NORTHEAST          1.018      0.209      4.881      0.000
+    SOUTH             -0.039      0.230     -0.171      0.865
+    SOUTHEAST          0.310      0.226      1.372      0.170
+
+ Intercepts
+    C#1               -0.898      0.323     -2.784      0.005
+    C#2                0.320      0.187      1.711      0.087
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.197E-02
+       (ratio of smallest to largest eigenvalue)
+
+
+LOGISTIC REGRESSION ODDS RATIO RESULTS
+
+                                                95% C.I.
+                    Estimate       S.E.  Lower 2.5% Upper 2.5%
+
+Categorical Latent Variables
+
+ C#1      ON
+    IBP1Q1Q2           9.084      3.205      4.549     18.141
+    IBP2Q3             2.042      0.362      1.443      2.890
+    NORTH              1.273      0.476      0.611      2.650
+    NORTHEAST          2.339      0.847      1.150      4.758
+    SOUTH              1.039      0.410      0.480      2.250
+    SOUTHEAST          1.697      0.674      0.779      3.695
+
+ C#2      ON
+    IBP1Q1Q2           2.792      0.543      1.907      4.087
+    IBP2Q3             1.672      0.243      1.257      2.224
+    NORTH              0.990      0.249      0.605      1.621
+    NORTHEAST          2.769      0.578      1.839      4.168
+    SOUTH              0.962      0.221      0.612      1.510
+    SOUTHEAST          1.363      0.307      0.876      2.121
+
+
+ALTERNATIVE PARAMETERIZATIONS FOR THE CATEGORICAL LATENT VARIABLE REGRESSION
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Parameterization using Reference Class 1
+
+ C#2      ON
+    IBP1Q1Q2          -1.180      0.406     -2.905      0.004
+    IBP2Q3            -0.200      0.150     -1.336      0.182
+    NORTH             -0.251      0.454     -0.553      0.580
+    NORTHEAST          0.169      0.434      0.389      0.697
+    SOUTH             -0.077      0.510     -0.152      0.879
+    SOUTHEAST         -0.219      0.512     -0.429      0.668
+
+ C#3      ON
+    IBP1Q1Q2          -2.207      0.353     -6.253      0.000
+    IBP2Q3            -0.714      0.177     -4.027      0.000
+    NORTH             -0.241      0.374     -0.645      0.519
+    NORTHEAST         -0.850      0.362     -2.345      0.019
+    SOUTH             -0.038      0.394     -0.097      0.923
+    SOUTHEAST         -0.529      0.397     -1.332      0.183
+
+ Intercepts
+    C#2                1.218      0.414      2.946      0.003
+    C#3                0.898      0.323      2.784      0.005
+
+Parameterization using Reference Class 2
+
+ C#1      ON
+    IBP1Q1Q2           1.180      0.406      2.905      0.004
+    IBP2Q3             0.200      0.150      1.336      0.182
+    NORTH              0.251      0.454      0.553      0.580
+    NORTHEAST         -0.169      0.434     -0.389      0.697
+    SOUTH              0.077      0.510      0.152      0.879
+    SOUTHEAST          0.219      0.512      0.429      0.668
+
+ C#3      ON
+    IBP1Q1Q2          -1.027      0.195     -5.278      0.000
+    IBP2Q3            -0.514      0.146     -3.531      0.000
+    NORTH              0.010      0.251      0.040      0.968
+    NORTHEAST         -1.018      0.209     -4.881      0.000
+    SOUTH              0.039      0.230      0.171      0.865
+    SOUTHEAST         -0.310      0.226     -1.372      0.170
+
+ Intercepts
+    C#1               -1.218      0.414     -2.946      0.003
+    C#3               -0.320      0.187     -1.711      0.087
+
+
+ODDS RATIO FOR THE ALTERNATIVE PARAMETERIZATIONS FOR THE CATEGORICAL LATENT VARIABLE REGRESSION
+
+                                                95% C.I.
+                    Estimate       S.E.  Lower 2.5% Upper 2.5%
+
+Parameterization using Reference Class 1
+
+ C#2      ON
+    IBP1Q1Q2           0.307      0.125      0.139      0.681
+    IBP2Q3             0.819      0.122      0.611      1.098
+    NORTH              0.778      0.353      0.319      1.894
+    NORTHEAST          1.184      0.513      0.506      2.769
+    SOUTH              0.926      0.472      0.341      2.515
+    SOUTHEAST          0.803      0.411      0.295      2.189
+
+ C#3      ON
+    IBP1Q1Q2           0.110      0.039      0.055      0.220
+    IBP2Q3             0.490      0.087      0.346      0.693
+    NORTH              0.786      0.294      0.377      1.636
+    NORTHEAST          0.428      0.155      0.210      0.870
+    SOUTH              0.963      0.380      0.444      2.085
+    SOUTHEAST          0.589      0.234      0.271      1.283
+
+Parameterization using Reference Class 2
+
+ C#1      ON
+    IBP1Q1Q2           3.254      1.322      1.468      7.213
+    IBP2Q3             1.221      0.183      0.911      1.637
+    NORTH              1.286      0.584      0.528      3.132
+    NORTHEAST          0.845      0.366      0.361      1.976
+    SOUTH              1.080      0.551      0.398      2.936
+    SOUTHEAST          1.245      0.637      0.457      3.395
+
+ C#3      ON
+    IBP1Q1Q2           0.358      0.070      0.245      0.524
+    IBP2Q3             0.598      0.087      0.450      0.796
+    NORTH              1.010      0.254      0.617      1.654
+    NORTHEAST          0.361      0.075      0.240      0.544
+    SOUTH              1.040      0.239      0.662      1.633
+    SOUTHEAST          0.734      0.166      0.472      1.142
+
+
+CONFIDENCE INTERVALS OF MODEL RESULTS
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Categorical Latent Variables
+
+ C#1      ON
+    IBP1Q1Q2         1.298       1.515       1.626       2.207       2.787       2.898       3.115
+    IBP2Q3           0.257       0.366       0.422       0.714       1.006       1.061       1.171
+    NORTH           -0.723      -0.492      -0.374       0.241       0.857       0.975       1.205
+    NORTHEAST       -0.084       0.140       0.254       0.850       1.446       1.560       1.783
+    SOUTH           -0.978      -0.735      -0.611       0.038       0.687       0.811       1.054
+    SOUTHEAST       -0.494      -0.249      -0.124       0.529       1.182       1.307       1.552
+
+ C#2      ON
+    IBP1Q1Q2         0.526       0.645       0.707       1.027       1.347       1.408       1.528
+    IBP2Q3           0.139       0.229       0.275       0.514       0.754       0.800       0.889
+    NORTH           -0.658      -0.503      -0.424      -0.010       0.404       0.483       0.638
+    NORTHEAST        0.481       0.609       0.675       1.018       1.362       1.427       1.556
+    SOUTH           -0.632      -0.490      -0.418      -0.039       0.339       0.412       0.554
+    SOUTHEAST       -0.272      -0.133      -0.062       0.310       0.681       0.752       0.891
+
+ Intercepts
+    C#1             -1.730      -1.531      -1.429      -0.898      -0.367      -0.266      -0.067
+    C#2             -0.162      -0.047       0.012       0.320       0.628       0.687       0.802
+
+
+CONFIDENCE INTERVALS FOR THE LOGISTIC REGRESSION ODDS RATIO RESULTS
+
+Categorical Latent Variables
+
+ C#1      ON
+    IBP1Q1Q2         3.661       4.549       5.084       9.084      16.232      18.141      22.543
+    IBP2Q3           1.293       1.443       1.525       2.042       2.733       2.890       3.224
+    NORTH            0.485       0.611       0.688       1.273       2.356       2.650       3.337
+    NORTHEAST        0.920       1.150       1.289       2.339       4.245       4.758       5.947
+    SOUTH            0.376       0.480       0.543       1.039       1.987       2.250       2.869
+    SOUTHEAST        0.610       0.779       0.883       1.697       3.261       3.695       4.719
+
+ C#2      ON
+    IBP1Q1Q2         1.692       1.907       2.027       2.792       3.845       4.087       4.608
+    IBP2Q3           1.149       1.257       1.316       1.672       2.125       2.224       2.433
+    NORTH            0.518       0.605       0.655       0.990       1.497       1.621       1.892
+    NORTHEAST        1.618       1.839       1.964       2.769       3.903       4.168       4.740
+    SOUTH            0.531       0.612       0.658       0.962       1.404       1.510       1.740
+    SOUTHEAST        0.762       0.876       0.940       1.363       1.975       2.121       2.437
+
+
+CONFIDENCE INTERVALS FOR THE ALTERNATIVE PARAMETERIZATIONS FOR THE CATEGORICAL LATENT VARIABLE REGRESSION
+
+Parameterization using Reference Class 1
+
+ C#2      ON
+    IBP1Q1Q2        -2.226      -1.976      -1.848      -1.180      -0.512      -0.384      -0.134
+    IBP2Q3          -0.585      -0.493      -0.446      -0.200       0.046       0.093       0.185
+    NORTH           -1.421      -1.142      -0.999      -0.251       0.496       0.639       0.919
+    NORTHEAST       -0.948      -0.681      -0.544       0.169       0.882       1.018       1.285
+    SOUTH           -1.391      -1.077      -0.916      -0.077       0.762       0.922       1.237
+    SOUTHEAST       -1.537      -1.222      -1.061      -0.219       0.622       0.784       1.099
+
+ C#3      ON
+    IBP1Q1Q2        -3.115      -2.898      -2.787      -2.207      -1.626      -1.515      -1.298
+    IBP2Q3          -1.171      -1.061      -1.006      -0.714      -0.422      -0.366      -0.257
+    NORTH           -1.205      -0.975      -0.857      -0.241       0.374       0.492       0.723
+    NORTHEAST       -1.783      -1.560      -1.446      -0.850      -0.254      -0.140       0.084
+    SOUTH           -1.054      -0.811      -0.687      -0.038       0.611       0.735       0.978
+    SOUTHEAST       -1.552      -1.307      -1.182      -0.529       0.124       0.249       0.494
+
+ Intercepts
+    C#2              0.153       0.408       0.538       1.218       1.899       2.029       2.284
+    C#3              0.067       0.266       0.367       0.898       1.429       1.531       1.730
+
+Parameterization using Reference Class 2
+
+ C#1      ON
+    IBP1Q1Q2         0.134       0.384       0.512       1.180       1.848       1.976       2.226
+    IBP2Q3          -0.185      -0.093      -0.046       0.200       0.446       0.493       0.585
+    NORTH           -0.919      -0.639      -0.496       0.251       0.999       1.142       1.421
+    NORTHEAST       -1.285      -1.018      -0.882      -0.169       0.544       0.681       0.948
+    SOUTH           -1.237      -0.922      -0.762       0.077       0.916       1.077       1.391
+    SOUTHEAST       -1.099      -0.784      -0.622       0.219       1.061       1.222       1.537
+
+ C#3      ON
+    IBP1Q1Q2        -1.528      -1.408      -1.347      -1.027      -0.707      -0.645      -0.526
+    IBP2Q3          -0.889      -0.800      -0.754      -0.514      -0.275      -0.229      -0.139
+    NORTH           -0.638      -0.483      -0.404       0.010       0.424       0.503       0.658
+    NORTHEAST       -1.556      -1.427      -1.362      -1.018      -0.675      -0.609      -0.481
+    SOUTH           -0.554      -0.412      -0.339       0.039       0.418       0.490       0.632
+    SOUTHEAST       -0.891      -0.752      -0.681      -0.310       0.062       0.133       0.272
+
+ Intercepts
+    C#1             -2.284      -2.029      -1.899      -1.218      -0.538      -0.408      -0.153
+    C#3             -0.802      -0.687      -0.628      -0.320      -0.012       0.047       0.162
+
+
+CONFIDENCE INTERVALS FOR THE ODDS RATIO FOR THE ALTERNATIVE PARAMETERIZATIONS FOR THE
+CATEGORICAL LATENT VARIABLE REGRESSION
+
+Parameterization using Reference Class 1
+
+ C#2      ON
+    IBP1Q1Q2         0.108       0.139       0.158       0.307       0.599       0.681       0.875
+    IBP2Q3           0.557       0.611       0.640       0.819       1.047       1.098       1.204
+    NORTH            0.241       0.319       0.368       0.778       1.642       1.894       2.506
+    NORTHEAST        0.388       0.506       0.580       1.184       2.416       2.769       3.616
+    SOUTH            0.249       0.341       0.400       0.926       2.142       2.515       3.444
+    SOUTHEAST        0.215       0.295       0.346       0.803       1.863       2.189       3.000
+
+ C#3      ON
+    IBP1Q1Q2         0.044       0.055       0.062       0.110       0.197       0.220       0.273
+    IBP2Q3           0.310       0.346       0.366       0.490       0.656       0.693       0.773
+    NORTH            0.300       0.377       0.425       0.786       1.454       1.636       2.060
+    NORTHEAST        0.168       0.210       0.236       0.428       0.776       0.870       1.087
+    SOUTH            0.349       0.444       0.503       0.963       1.842       2.085       2.658
+    SOUTHEAST        0.212       0.271       0.307       0.589       1.132       1.283       1.639
+
+Parameterization using Reference Class 2
+
+ C#1      ON
+    IBP1Q1Q2         1.143       1.468       1.668       3.254       6.347       7.213       9.262
+    IBP2Q3           0.831       0.911       0.955       1.221       1.562       1.637       1.795
+    NORTH            0.399       0.528       0.609       1.286       2.714       3.132       4.143
+    NORTHEAST        0.277       0.361       0.414       0.845       1.723       1.976       2.580
+    SOUTH            0.290       0.398       0.467       1.080       2.500       2.936       4.020
+    SOUTHEAST        0.333       0.457       0.537       1.245       2.890       3.395       4.652
+
+ C#3      ON
+    IBP1Q1Q2         0.217       0.245       0.260       0.358       0.493       0.524       0.591
+    IBP2Q3           0.411       0.450       0.471       0.598       0.760       0.796       0.870
+    NORTH            0.529       0.617       0.668       1.010       1.528       1.654       1.931
+    NORTHEAST        0.211       0.240       0.256       0.361       0.509       0.544       0.618
+    SOUTH            0.575       0.662       0.712       1.040       1.519       1.633       1.882
+    SOUTHEAST        0.410       0.472       0.506       0.734       1.064       1.142       1.312
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 1
+
+
+           NU
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+                    0             0             0             0             0
+
+
+           NU
+              SOUTHEAS
+              ________
+                    0
+
+
+           LAMBDA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2           0             0             0             0             0
+ IBP2Q3             0             0             0             0             0
+ NORTH              0             0             0             0             0
+ NORTHEAS           0             0             0             0             0
+ SOUTH              0             0             0             0             0
+ SOUTHEAS           0             0             0             0             0
+
+
+           LAMBDA
+              SOUTHEAS
+              ________
+ IBP1Q1Q2           0
+ IBP2Q3             0
+ NORTH              0
+ NORTHEAS           0
+ SOUTH              0
+ SOUTHEAS           0
+
+
+           THETA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2           0
+ IBP2Q3             0             0
+ NORTH              0             0             0
+ NORTHEAS           0             0             0             0
+ SOUTH              0             0             0             0             0
+ SOUTHEAS           0             0             0             0             0
+
+
+           THETA
+              SOUTHEAS
+              ________
+ SOUTHEAS           0
+
+
+           ALPHA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+                    0             0             0             0             0
+
+
+           ALPHA
+              SOUTHEAS
+              ________
+                    0
+
+
+           BETA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2           0             0             0             0             0
+ IBP2Q3             0             0             0             0             0
+ NORTH              0             0             0             0             0
+ NORTHEAS           0             0             0             0             0
+ SOUTH              0             0             0             0             0
+ SOUTHEAS           0             0             0             0             0
+
+
+           BETA
+              SOUTHEAS
+              ________
+ IBP1Q1Q2           0
+ IBP2Q3             0
+ NORTH              0
+ NORTHEAS           0
+ SOUTH              0
+ SOUTHEAS           0
+
+
+           PSI
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2           0
+ IBP2Q3             0             0
+ NORTH              0             0             0
+ NORTHEAS           0             0             0             0
+ SOUTH              0             0             0             0             0
+ SOUTHEAS           0             0             0             0             0
+
+
+           PSI
+              SOUTHEAS
+              ________
+ SOUTHEAS           0
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 2
+
+
+           NU
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+                    0             0             0             0             0
+
+
+           NU
+              SOUTHEAS
+              ________
+                    0
+
+
+           LAMBDA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2           0             0             0             0             0
+ IBP2Q3             0             0             0             0             0
+ NORTH              0             0             0             0             0
+ NORTHEAS           0             0             0             0             0
+ SOUTH              0             0             0             0             0
+ SOUTHEAS           0             0             0             0             0
+
+
+           LAMBDA
+              SOUTHEAS
+              ________
+ IBP1Q1Q2           0
+ IBP2Q3             0
+ NORTH              0
+ NORTHEAS           0
+ SOUTH              0
+ SOUTHEAS           0
+
+
+           THETA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2           0
+ IBP2Q3             0             0
+ NORTH              0             0             0
+ NORTHEAS           0             0             0             0
+ SOUTH              0             0             0             0             0
+ SOUTHEAS           0             0             0             0             0
+
+
+           THETA
+              SOUTHEAS
+              ________
+ SOUTHEAS           0
+
+
+           ALPHA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+                    0             0             0             0             0
+
+
+           ALPHA
+              SOUTHEAS
+              ________
+                    0
+
+
+           BETA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2           0             0             0             0             0
+ IBP2Q3             0             0             0             0             0
+ NORTH              0             0             0             0             0
+ NORTHEAS           0             0             0             0             0
+ SOUTH              0             0             0             0             0
+ SOUTHEAS           0             0             0             0             0
+
+
+           BETA
+              SOUTHEAS
+              ________
+ IBP1Q1Q2           0
+ IBP2Q3             0
+ NORTH              0
+ NORTHEAS           0
+ SOUTH              0
+ SOUTHEAS           0
+
+
+           PSI
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2           0
+ IBP2Q3             0             0
+ NORTH              0             0             0
+ NORTHEAS           0             0             0             0
+ SOUTH              0             0             0             0             0
+ SOUTHEAS           0             0             0             0             0
+
+
+           PSI
+              SOUTHEAS
+              ________
+ SOUTHEAS           0
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 3
+
+
+           NU
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+                    0             0             0             0             0
+
+
+           NU
+              SOUTHEAS
+              ________
+                    0
+
+
+           LAMBDA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2           0             0             0             0             0
+ IBP2Q3             0             0             0             0             0
+ NORTH              0             0             0             0             0
+ NORTHEAS           0             0             0             0             0
+ SOUTH              0             0             0             0             0
+ SOUTHEAS           0             0             0             0             0
+
+
+           LAMBDA
+              SOUTHEAS
+              ________
+ IBP1Q1Q2           0
+ IBP2Q3             0
+ NORTH              0
+ NORTHEAS           0
+ SOUTH              0
+ SOUTHEAS           0
+
+
+           THETA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2           0
+ IBP2Q3             0             0
+ NORTH              0             0             0
+ NORTHEAS           0             0             0             0
+ SOUTH              0             0             0             0             0
+ SOUTHEAS           0             0             0             0             0
+
+
+           THETA
+              SOUTHEAS
+              ________
+ SOUTHEAS           0
+
+
+           ALPHA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+                    0             0             0             0             0
+
+
+           ALPHA
+              SOUTHEAS
+              ________
+                    0
+
+
+           BETA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2           0             0             0             0             0
+ IBP2Q3             0             0             0             0             0
+ NORTH              0             0             0             0             0
+ NORTHEAS           0             0             0             0             0
+ SOUTH              0             0             0             0             0
+ SOUTHEAS           0             0             0             0             0
+
+
+           BETA
+              SOUTHEAS
+              ________
+ IBP1Q1Q2           0
+ IBP2Q3             0
+ NORTH              0
+ NORTHEAS           0
+ SOUTH              0
+ SOUTHEAS           0
+
+
+           PSI
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2           0
+ IBP2Q3             0             0
+ NORTH              0             0             0
+ NORTHEAS           0             0             0             0
+ SOUTH              0             0             0             0             0
+ SOUTHEAS           0             0             0             0             0
+
+
+           PSI
+              SOUTHEAS
+              ________
+ SOUTHEAS           0
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2           C#3
+              ________      ________      ________
+                    1             2             0
+
+
+           GAMMA(C)
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ C#1                3             4             5             6             7
+ C#2                9            10            11            12            13
+ C#3                0             0             0             0             0
+
+
+           GAMMA(C)
+              SOUTHEAS
+              ________
+ C#1                8
+ C#2               14
+ C#3                0
+
+
+     STARTING VALUES FOR LATENT CLASS 1
+
+
+           NU
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           NU
+              SOUTHEAS
+              ________
+                0.000
+
+
+           LAMBDA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2       1.000         0.000         0.000         0.000         0.000
+ IBP2Q3         0.000         1.000         0.000         0.000         0.000
+ NORTH          0.000         0.000         1.000         0.000         0.000
+ NORTHEAS       0.000         0.000         0.000         1.000         0.000
+ SOUTH          0.000         0.000         0.000         0.000         1.000
+ SOUTHEAS       0.000         0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              SOUTHEAS
+              ________
+ IBP1Q1Q2       0.000
+ IBP2Q3         0.000
+ NORTH          0.000
+ NORTHEAS       0.000
+ SOUTH          0.000
+ SOUTHEAS       1.000
+
+
+           THETA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2       0.000
+ IBP2Q3         0.000         0.000
+ NORTH          0.000         0.000         0.000
+ NORTHEAS       0.000         0.000         0.000         0.000
+ SOUTH          0.000         0.000         0.000         0.000         0.000
+ SOUTHEAS       0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              SOUTHEAS
+              ________
+ SOUTHEAS       0.000
+
+
+           ALPHA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           ALPHA
+              SOUTHEAS
+              ________
+                0.000
+
+
+           BETA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2       0.000         0.000         0.000         0.000         0.000
+ IBP2Q3         0.000         0.000         0.000         0.000         0.000
+ NORTH          0.000         0.000         0.000         0.000         0.000
+ NORTHEAS       0.000         0.000         0.000         0.000         0.000
+ SOUTH          0.000         0.000         0.000         0.000         0.000
+ SOUTHEAS       0.000         0.000         0.000         0.000         0.000
+
+
+           BETA
+              SOUTHEAS
+              ________
+ IBP1Q1Q2       0.000
+ IBP2Q3         0.000
+ NORTH          0.000
+ NORTHEAS       0.000
+ SOUTH          0.000
+ SOUTHEAS       0.000
+
+
+           PSI
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2       0.102
+ IBP2Q3         0.000         0.069
+ NORTH          0.000         0.000         0.028
+ NORTHEAS       0.000         0.000         0.000         0.109
+ SOUTH          0.000         0.000         0.000         0.000         0.071
+ SOUTHEAS       0.000         0.000         0.000         0.000         0.000
+
+
+           PSI
+              SOUTHEAS
+              ________
+ SOUTHEAS       0.118
+
+
+     STARTING VALUES FOR LATENT CLASS 2
+
+
+           NU
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           NU
+              SOUTHEAS
+              ________
+                0.000
+
+
+           LAMBDA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2       1.000         0.000         0.000         0.000         0.000
+ IBP2Q3         0.000         1.000         0.000         0.000         0.000
+ NORTH          0.000         0.000         1.000         0.000         0.000
+ NORTHEAS       0.000         0.000         0.000         1.000         0.000
+ SOUTH          0.000         0.000         0.000         0.000         1.000
+ SOUTHEAS       0.000         0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              SOUTHEAS
+              ________
+ IBP1Q1Q2       0.000
+ IBP2Q3         0.000
+ NORTH          0.000
+ NORTHEAS       0.000
+ SOUTH          0.000
+ SOUTHEAS       1.000
+
+
+           THETA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2       0.000
+ IBP2Q3         0.000         0.000
+ NORTH          0.000         0.000         0.000
+ NORTHEAS       0.000         0.000         0.000         0.000
+ SOUTH          0.000         0.000         0.000         0.000         0.000
+ SOUTHEAS       0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              SOUTHEAS
+              ________
+ SOUTHEAS       0.000
+
+
+           ALPHA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           ALPHA
+              SOUTHEAS
+              ________
+                0.000
+
+
+           BETA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2       0.000         0.000         0.000         0.000         0.000
+ IBP2Q3         0.000         0.000         0.000         0.000         0.000
+ NORTH          0.000         0.000         0.000         0.000         0.000
+ NORTHEAS       0.000         0.000         0.000         0.000         0.000
+ SOUTH          0.000         0.000         0.000         0.000         0.000
+ SOUTHEAS       0.000         0.000         0.000         0.000         0.000
+
+
+           BETA
+              SOUTHEAS
+              ________
+ IBP1Q1Q2       0.000
+ IBP2Q3         0.000
+ NORTH          0.000
+ NORTHEAS       0.000
+ SOUTH          0.000
+ SOUTHEAS       0.000
+
+
+           PSI
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2       0.102
+ IBP2Q3         0.000         0.069
+ NORTH          0.000         0.000         0.028
+ NORTHEAS       0.000         0.000         0.000         0.109
+ SOUTH          0.000         0.000         0.000         0.000         0.071
+ SOUTHEAS       0.000         0.000         0.000         0.000         0.000
+
+
+           PSI
+              SOUTHEAS
+              ________
+ SOUTHEAS       0.118
+
+
+     STARTING VALUES FOR LATENT CLASS 3
+
+
+           NU
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           NU
+              SOUTHEAS
+              ________
+                0.000
+
+
+           LAMBDA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2       1.000         0.000         0.000         0.000         0.000
+ IBP2Q3         0.000         1.000         0.000         0.000         0.000
+ NORTH          0.000         0.000         1.000         0.000         0.000
+ NORTHEAS       0.000         0.000         0.000         1.000         0.000
+ SOUTH          0.000         0.000         0.000         0.000         1.000
+ SOUTHEAS       0.000         0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              SOUTHEAS
+              ________
+ IBP1Q1Q2       0.000
+ IBP2Q3         0.000
+ NORTH          0.000
+ NORTHEAS       0.000
+ SOUTH          0.000
+ SOUTHEAS       1.000
+
+
+           THETA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2       0.000
+ IBP2Q3         0.000         0.000
+ NORTH          0.000         0.000         0.000
+ NORTHEAS       0.000         0.000         0.000         0.000
+ SOUTH          0.000         0.000         0.000         0.000         0.000
+ SOUTHEAS       0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              SOUTHEAS
+              ________
+ SOUTHEAS       0.000
+
+
+           ALPHA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           ALPHA
+              SOUTHEAS
+              ________
+                0.000
+
+
+           BETA
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2       0.000         0.000         0.000         0.000         0.000
+ IBP2Q3         0.000         0.000         0.000         0.000         0.000
+ NORTH          0.000         0.000         0.000         0.000         0.000
+ NORTHEAS       0.000         0.000         0.000         0.000         0.000
+ SOUTH          0.000         0.000         0.000         0.000         0.000
+ SOUTHEAS       0.000         0.000         0.000         0.000         0.000
+
+
+           BETA
+              SOUTHEAS
+              ________
+ IBP1Q1Q2       0.000
+ IBP2Q3         0.000
+ NORTH          0.000
+ NORTHEAS       0.000
+ SOUTH          0.000
+ SOUTHEAS       0.000
+
+
+           PSI
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ IBP1Q1Q2       0.102
+ IBP2Q3         0.000         0.069
+ NORTH          0.000         0.000         0.028
+ NORTHEAS       0.000         0.000         0.000         0.109
+ SOUTH          0.000         0.000         0.000         0.000         0.071
+ SOUTHEAS       0.000         0.000         0.000         0.000         0.000
+
+
+           PSI
+              SOUTHEAS
+              ________
+ SOUTHEAS       0.118
+
+
+     STARTING VALUES FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2           C#3
+              ________      ________      ________
+                0.000         0.000         0.000
+
+
+           GAMMA(C)
+              IBP1Q1Q2      IBP2Q3        NORTH         NORTHEAS      SOUTH
+              ________      ________      ________      ________      ________
+ C#1            0.000         0.000         0.000         0.000         0.000
+ C#2            0.000         0.000         0.000         0.000         0.000
+ C#3            0.000         0.000         0.000         0.000         0.000
+
+
+           GAMMA(C)
+              SOUTHEAS
+              ________
+ C#1            0.000
+ C#2            0.000
+ C#3            0.000
+
+
+TECHNICAL 3 OUTPUT
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                     1             2             3             4             5
+              ________      ________      ________      ________      ________
+        1   0.104153D+00
+        2  -0.159850D-01  0.349829D-01
+        3  -0.243403D-01 -0.171475D-02  0.124508D+00
+        4   0.122571D-02 -0.402103D-02  0.458456D-02  0.314274D-01
+        5  -0.104975D+00  0.163318D-01  0.245230D-01 -0.370509D-02  0.140027D+00
+        6  -0.103690D+00  0.159897D-01  0.233171D-01 -0.429139D-02  0.104904D+00
+        7  -0.964376D-01  0.188018D-01 -0.351557D-01 -0.863747D-02  0.975042D-01
+        8  -0.116877D+00  0.221526D-01  0.413891D-01 -0.129541D-01  0.118620D+00
+        9  -0.113570D-01  0.259627D-02 -0.129740D-02  0.304257D-02  0.114403D-01
+       10  -0.424302D-02 -0.254312D-02  0.398431D-02  0.151339D-01  0.361647D-02
+       11   0.163205D-01 -0.352783D-01  0.167148D-02  0.386183D-02 -0.151666D-02
+       12   0.161353D-01 -0.349139D-01  0.160478D-02  0.363533D-02 -0.164743D-01
+       13   0.199571D-01 -0.358042D-01  0.807871D-02 -0.213160D-03 -0.202027D-01
+       14   0.235256D-01 -0.367428D-01 -0.524931D-02  0.166064D-02 -0.240792D-01
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                     6             7             8             9            10
+              ________      ________      ________      ________      ________
+        6   0.131268D+00
+        7   0.971285D-01  0.155514D+00
+        8   0.117881D+00  0.924824D-01  0.157672D+00
+        9   0.115767D-01  0.201299D-01  0.537637D-02  0.378353D-01
+       10   0.435812D-02 -0.151275D-03  0.179719D-02  0.658625D-02  0.211987D-01
+       11  -0.163933D-01 -0.190596D-01 -0.227412D-01 -0.240736D-02  0.261359D-02
+       12  -0.656084D-02 -0.188378D-01 -0.222798D-01 -0.281239D-02  0.186080D-02
+       13  -0.201069D-01 -0.258485D-01 -0.221341D-01 -0.139883D-01 -0.417470D-02
+       14  -0.237977D-01 -0.225659D-01 -0.266467D-01 -0.978991D-02 -0.411757D-02
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                    11            12            13            14
+              ________      ________      ________      ________
+       11   0.632434D-01
+       12   0.352020D-01  0.435443D-01
+       13   0.359520D-01  0.359522D-01  0.529891D-01
+       14   0.368152D-01  0.368946D-01  0.400055D-01  0.508876D-01
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                     1             2             3             4             5
+              ________      ________      ________      ________      ________
+        1       1.000
+        2      -0.265         1.000
+        3      -0.214        -0.026         1.000
+        4       0.021        -0.121         0.073         1.000
+        5      -0.869         0.233         0.186        -0.056         1.000
+        6      -0.887         0.236         0.182        -0.067         0.774
+        7      -0.758         0.255        -0.253        -0.124         0.661
+        8      -0.912         0.298         0.295        -0.184         0.798
+        9      -0.181         0.071        -0.019         0.088         0.157
+       10      -0.090        -0.093         0.078         0.586         0.066
+       11       0.201        -0.750         0.019         0.087        -0.016
+       12       0.240        -0.895         0.022         0.098        -0.211
+       13       0.269        -0.832         0.099        -0.005        -0.235
+       14       0.323        -0.871        -0.066         0.042        -0.285
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                     6             7             8             9            10
+              ________      ________      ________      ________      ________
+        6       1.000
+        7       0.680         1.000
+        8       0.819         0.591         1.000
+        9       0.164         0.262         0.070         1.000
+       10       0.083        -0.003         0.031         0.233         1.000
+       11      -0.180        -0.192        -0.228        -0.049         0.071
+       12      -0.087        -0.229        -0.269        -0.069         0.061
+       13      -0.241        -0.285        -0.242        -0.312        -0.125
+       14      -0.291        -0.254        -0.297        -0.223        -0.125
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                    11            12            13            14
+              ________      ________      ________      ________
+       11       1.000
+       12       0.671         1.000
+       13       0.621         0.748         1.000
+       14       0.649         0.784         0.770         1.000
+
+
+TECHNICAL 4 OUTPUT
+
+
+TECHNICAL 8 OUTPUT
+
+
+   E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
+              1 -0.18196460D+05    0.0000000    0.0000000  EM
+              2 -0.15666378D+05 2530.0827164    0.1390426  EM
+              3 -0.15584346D+05   82.0314482    0.0052361  EM
+              4 -0.15582618D+05    1.7279045    0.0001109  EM
+              5 -0.15582614D+05    0.0039518    0.0000003  EM
+              6 -0.15582614D+05    0.0000025    0.0000000  EM
+              7 -0.15582614D+05    0.0000000    0.0000000  EM
+
+
+DIAGRAM INFORMATION
+
+  Mplus diagrams are currently not available for Mixture analysis.
+  No diagram output was produced.
+
+
+     Beginning Time:  15:08:50
+        Ending Time:  15:08:50
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2021 Muthen & Muthen
